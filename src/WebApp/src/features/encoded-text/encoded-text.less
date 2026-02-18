@@ -1,0 +1,26 @@
+.streaming-text {
+  &__encoded-results {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: baseline;
+    flex-wrap: wrap;
+
+    & > h5 {
+      margin: 0;
+    }
+
+    & > span {
+      word-break: break-all;
+      min-width: 0;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__encoded-results {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+}

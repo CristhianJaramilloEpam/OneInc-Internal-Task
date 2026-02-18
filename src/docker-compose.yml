@@ -1,0 +1,6 @@
+services:
+  encoding.webapi:
+    image: ${DOCKER_REGISTRY-}encodingwebapi
+    build:
+      context: .
+      dockerfile: Services/Encoding/Encoding.WebApi/Dockerfile

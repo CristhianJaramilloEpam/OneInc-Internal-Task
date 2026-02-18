@@ -1,0 +1,1 @@
+﻿global using Encoding.Application.Infrastructure;

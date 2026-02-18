@@ -1,0 +1,24 @@
+.streaming-text {
+  &__encoded-table {
+    width: 100%;
+    margin-top: 20px;
+
+    & table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    & .accordion .accordion-item {
+      border: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      border-top: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+      & thead {
+        display: none;
+      }
+    }
+  }
+}
