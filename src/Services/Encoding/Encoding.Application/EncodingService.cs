@@ -1,6 +1,4 @@
-﻿using Encoding.Application.DTO;
-
-namespace Encoding.Application
+﻿namespace Encoding.Application
 {
     public class EncodingService(IEncoderStrategy encoderStrategy, ILogger<EncodingService> logger) : IEncodingService
     {

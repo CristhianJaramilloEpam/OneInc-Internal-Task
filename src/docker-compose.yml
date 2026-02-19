@@ -4,3 +4,21 @@ services:
     build:
       context: .
       dockerfile: Services/Encoding/Encoding.WebApi/Dockerfile
+
+  webapp:
+    image: ${DOCKER_REGISTRY-}webapp
+    build:
+      context: ./WebApp
+      dockerfile: Dockerfile
+      args:
+        - API_URL
+    depends_on:
+      - encoding.webapi
+
+  proxy:
+    image: ${DOCKER_REGISTRY-}proxy
+    build:
+      context: ./Proxy
+      dockerfile: Dockerfile
+    depends_on:
+      - webapp

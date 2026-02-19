@@ -4,7 +4,7 @@ import "./input-text.less";
 import { ProgressBar } from "../../components/progress-bar";
 import { useEncodeTextMutation } from "../../context/api/encode-api";
 import { useAppSelector } from "../../context/hooks";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useToast } from "../../hooks/useToast";
 import { Toast } from "../../components/toast";
 
@@ -13,8 +13,9 @@ type Inputs = {
 };
 
 export const InputText: React.FC = () => {
-  const [encodeText, { isLoading: isEncoding, isSuccess}] = useEncodeTextMutation();
+  const [encodeText, { isLoading: isEncoding, isSuccess, isError }] = useEncodeTextMutation();
   const { toast, showToast, hideToast } = useToast();
+  const [isAborted, setIsAborted] = useState(false);
   const progress = useAppSelector<number>(
     (state) => state.encode.progress || 0,
   );
@@ -28,6 +29,18 @@ export const InputText: React.FC = () => {
       showToast("Encoding completed successfully!", "success");
     }
   }, [isSuccess, isEncoding]);
+  
+   useEffect(() => {
+    if (isError && !isAborted) {
+      showToast("Encoding failed!", "danger");
+    }
+  }, [isError, isAborted]);
+
+  useEffect(() => {
+    if (isAborted) {
+      showToast("Encoding stopped", "warning");
+    }
+  }, [isAborted]);
 
   const {
     register,
@@ -39,19 +52,19 @@ export const InputText: React.FC = () => {
     mutationRef.current = encodeText({
       text: data.text,
     });
-    
+    setIsAborted(false);
   };
 
   const handleStop = (e: React.MouseEvent<HTMLButtonElement>) => {
     mutationRef.current?.abort();
     mutationRef.current = null;
-    showToast("Encoding stopped", "warning");
+    setIsAborted(true);
     e.preventDefault();
   };
 
   return (
     <>
-      <Header />
+      <Header title="Long Running Job" />
       <form
         className="streaming-text__form"
         onSubmit={handleSubmit(handleFormSubmit)}

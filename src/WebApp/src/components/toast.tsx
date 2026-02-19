@@ -13,7 +13,6 @@ interface ToastProps {
 export const Toast = ({ message, show, type = "primary", onHide }: ToastProps) => {
   const toastRef = useRef<HTMLDivElement>(null);
   const toastInstanceRef = useRef<InstanceType<Window["bootstrap"]["Toast"]> | null>(null);
-
   useEffect(() => {
     if (!toastRef.current || !window.bootstrap) return;
 
@@ -32,12 +31,13 @@ export const Toast = ({ message, show, type = "primary", onHide }: ToastProps) =
   }, []);
 
   useEffect(() => {
+    if (!toastInstanceRef.current) return;
     if (show) {
       toastInstanceRef.current?.show();
     } else {
       toastInstanceRef.current?.hide();
     }
-  }, [show]);
+  }, [show, message]);
 
   return (
     <div className="toast-container position-fixed bottom-0 end-0 p-3">

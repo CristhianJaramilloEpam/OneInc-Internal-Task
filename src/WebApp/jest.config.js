@@ -8,4 +8,7 @@ module.exports = {
   transform: {
     '^.+\\.(ts|tsx|js|jsx)$': 'babel-jest',
   },
+  moduleNameMapper: {
+    '\\.(less|css)$': '<rootDir>/__mocks__/fileMock.js',
+  },
 };

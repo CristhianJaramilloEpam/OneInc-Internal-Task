@@ -1,0 +1,9 @@
+﻿global using System.Text.Json;
+global using Encoding.WebApi.Handlers;
+global using Microsoft.AspNetCore.Http;
+global using Microsoft.Extensions.Logging;
+global using Moq;
+global using Encoding.Application;
+global using Encoding.Application.DTO;
+global using Encoding.WebApi.Controllers;
+global using Xunit;
