@@ -39,8 +39,6 @@ OneInc-Internal-Task/
 |----------|------------------------------------------------------|
 | Backend  | .NET 10, C#, Domain-Driven Design (DDD)              |
 | Frontend | React 18, TypeScript, Redux Toolkit, React Hook Form |
-| Proxy    | Nginx                                                |
-| Containers | Docker, Docker Compose                             |
 | Testing  | xUnit (backend), Jest (frontend)                     |
 
 ---
