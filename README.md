@@ -97,4 +97,4 @@ API_URL=https://localhost:7014/
 
 For a full solution that supports heavy tasks in production, an architecture design document is included. It explains the proposed system, how it scales, and how it meets the requirements.
 
-> **Document:** [`./OneInc - RFP.docx`](./OneInc%20-%20RFP.docx)
+> **Document:** [`./OneInc - RFP.pdf`](./OneInc%20-%20RFP.pdf)
