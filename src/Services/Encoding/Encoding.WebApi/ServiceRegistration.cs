@@ -33,7 +33,7 @@
         /// <summary>
         /// Adds infrastructure-related services to the specified dependency injection container.
         /// </summary>
-        /// <remarks>This method registers the IEncoderService as a scoped service using the Base64Service
+        /// <remarks>This method registers the IEncoderStrategy as a scoped service using the Base64Service
         /// implementation.</remarks>
         /// <param name="services">The service collection to which the infrastructure services will be added. Cannot be null.</param>
         /// <param name="configuration">The configuration settings used to configure the infrastructure services. Cannot be null.</param>
