@@ -28,7 +28,7 @@ export const Toast = ({ message, show, type = "primary", onHide }: ToastProps) =
       el.removeEventListener("hidden.bs.toast", onHide);
       toastInstanceRef.current?.dispose();
     };
-  }, []);
+  }, [onHide]);
 
   useEffect(() => {
     if (!toastInstanceRef.current) return;

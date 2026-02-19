@@ -1,8 +1,8 @@
 import { useMemo } from "react";
-import "./encoded-ocurrences.less";
+import "./encoded-occurrences.less";
 import { useAppSelector } from "../../context/hooks";
 
-export const EncodedOcurrences: React.FC = () => {
+export const EncodedOccurrences: React.FC = () => {
   const encodedChars = useAppSelector<string[]>(
     (state) => state.encode.encodedChars || [],
   );
@@ -31,7 +31,7 @@ export const EncodedOcurrences: React.FC = () => {
                   aria-expanded="false"
                   aria-controls="flush-collapseOne"
                 >
-                  Number of ocurrences
+                  Number of occurrences
                 </button>
               </h2>
               <div

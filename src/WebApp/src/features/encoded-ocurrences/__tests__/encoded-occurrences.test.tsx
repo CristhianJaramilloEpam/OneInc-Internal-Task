@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { encodeSlice, EncodeState } from "../../../context/encode-slice";
-import { EncodedOcurrences } from "../encoded-ocurrences";
+import { EncodedOccurrences } from "../encoded-occurrences";
 
 const createTestStore = (encodeState: Partial<EncodeState> = {}) =>
   configureStore({
@@ -15,11 +15,11 @@ const createTestStore = (encodeState: Partial<EncodeState> = {}) =>
 const renderWithStore = (encodeState: Partial<EncodeState> = {}) =>
   render(
     <Provider store={createTestStore(encodeState)}>
-      <EncodedOcurrences />
+      <EncodedOccurrences />
     </Provider>
   );
 
-describe("EncodedOcurrences", () => {
+describe("EncodedOccurrences", () => {
   it("should not render the table when encodedChars is empty", () => {
     // Arrange & Act
     const { container } = renderWithStore({ encodedChars: [] });
@@ -45,6 +45,6 @@ describe("EncodedOcurrences", () => {
     renderWithStore({ encodedChars: ["Z"] });
 
     // Assert
-    expect(screen.getByText("Number of ocurrences")).toBeInTheDocument();
+    expect(screen.getByText("Number of occurrences")).toBeInTheDocument();
   });
 });

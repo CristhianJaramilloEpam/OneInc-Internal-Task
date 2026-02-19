@@ -4,8 +4,8 @@ import "./nav-bar.less";
 export const NavBar: React.FC = () => {
   return (
     <nav className="navbar navbar-light bg-light">
-      <a className="navbar-brand" href="#">
-        <img src={logo} height="30" alt="" />
+      <a className="navbar-brand" href="/">
+        <img src={logo} height="30" alt="OneInc logo" />
       </a>
     </nav>
   );
