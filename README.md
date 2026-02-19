@@ -6,7 +6,7 @@ This repository contains a proposal for OneInc to handle heavy, long-running tas
 
 ## Overview
 
-The prototype simulates how a long-running job works. It uses a clean backend architecture and a modern React frontend. The goal is to show how the final system could behave based on the given requirements.
+The prototype simulates how the application should work. It uses a clean backend architecture and a modern React frontend. The goal is to show how the final system could behave based on the given requirements.
 
 ---
 
@@ -26,7 +26,7 @@ OneInc-Internal-Task/
 │   ├── Proxy/                      # Nginx authentication proxy
 │   ├── docker-compose.yml
 │   └── OneInc.StreamingText.sln
-└── OneInc - RFP.docx               # Architecture proposal document
+└── OneInc - RFP.pdf               # Architecture proposal document
 ```
 
 ---
