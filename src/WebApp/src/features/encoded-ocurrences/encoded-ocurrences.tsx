@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import "./encoded-ocurrences.less";
 import { useAppSelector } from "../../context/hooks";
 
@@ -6,12 +7,13 @@ export const EncodedOcurrences: React.FC = () => {
     (state) => state.encode.encodedChars || [],
   );
 
-  const charFrequency = encodedChars.reduce<Record<string, number>>(
-    (acc, char) => {
-      acc[char] = (acc[char] || 0) + 1;
-      return acc;
-    },
-    {},
+  const charFrequency = useMemo(
+    () =>
+      encodedChars.reduce<Record<string, number>>((acc, char) => {
+        acc[char] = (acc[char] || 0) + 1;
+        return acc;
+      }, {}),
+    [encodedChars],
   );
 
   return (
